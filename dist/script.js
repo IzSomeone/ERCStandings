@@ -1,7 +1,8 @@
 const loader = document.getElemetById("loader");
 const table = document.getElementById("table.standings);
 
-document.body.classList.add("loading");
+// Shows Loader
+loader.style.display = "block";
                                       
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
