@@ -24,7 +24,7 @@ def serve_dist(filename):
 
 @app.route("/favicon.ico")
 def favicon():
-    return send_from_directory(ROOT_DIR, "ERC_TRANSPARENT_b.png")
+    return send_from_directory(ROOT_DIR, "logo.png")
 
 
 url = "https://jynyslmoqfbcjugskbwe.supabase.co"
