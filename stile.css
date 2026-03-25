@@ -127,7 +127,7 @@ table.standings td:first-child {
   --_s:-1;
 }
 
-loader {
+.loader {
 @keyframes l20 {
     0%       {transform:scale(var(--_s,1)) translate(0)    rotate(0)}
     25%      {transform:scale(var(--_s,1)) translate(-25%) rotate(0)}
