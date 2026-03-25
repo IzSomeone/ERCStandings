@@ -1,9 +1,3 @@
-const loader = document.getElemetById("loader");
-const table = document.getElementById("table.standings);
-
-// Shows Loader
-loader.style.display = "block";
-                                      
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -31,9 +25,6 @@ function get_standings() {
         `;
         });
     });
-
-  loader.style.display = "none";
-  table.style.opacity = "1";
 
 }
 get_standings();
