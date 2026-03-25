@@ -32,7 +32,8 @@ function get_standings() {
         });
     });
 
-    loader.style.display = "none";
-        document.body.classList.remove("loading");
+  loader.style.display = "none";
+  table.style.opacity = "1";
+
 }
 get_standings();
