@@ -109,29 +109,24 @@ table.standings td:first-child {
     opacity: 0.6;
 }
 
-/* HTML: <div class="loader"></div> */
 .loader {
-  height: 15px;
-  aspect-ratio: 6;
-  display: flex;
-}
-.loader:before,
-.loader:after {
-  content: "";
-  flex: 1;
-  padding-left: calc(100%/6);
-  background: radial-gradient(closest-side at calc(100%/3) 50%,#000 90%,#0000) 0/75% 100% content-box;
-  animation: l20 2s infinite;
-}
-.loader:after {
-  --_s:-1;
+    border: 6px solid rgba(255, 255, 255, 0.1);
+    border-top: 6px solid #ffcc00;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    animation: spin 0.8s linear infinite;
+    margin: 30px auto;
+    display: none; /* nascosto di default */
 }
 
-.loader {
-@keyframes l20 {
-    0%       {transform:scale(var(--_s,1)) translate(0)    rotate(0)}
-    25%      {transform:scale(var(--_s,1)) translate(-25%) rotate(0)}
-    50%      {transform:scale(var(--_s,1)) translate(-25%) rotate(1turn)}
-    75%,100% {transform:scale(var(--_s,1)) translate(0)    rotate(1turn)}
-    }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Effetto fade-in tabella */
+table.standings {
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
