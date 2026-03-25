@@ -1,3 +1,8 @@
+const loader = document.getElemetById("loader");
+const table = document.getElementById("table.standings);
+
+document.body.classList.add("loading");
+                                      
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -25,5 +30,8 @@ function get_standings() {
         `;
         });
     });
+
+    loader.style.display = "none";
+        document.body.classList.remove("loading");
 }
 get_standings();
