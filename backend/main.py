@@ -6,13 +6,14 @@ app = Flask(__name__)
 
 CORS(app, supports_credentials=True)
 
-@app.get("/")
+@app.route("/")
 def serve_index():
     return send_from_directory(".", "index.html")
 
-@app.get("/stile.css")
-def serve_css():
-    return send_from_directory(".", "stile.css")
+# Serve qualsiasi file statico (CSS, JS, immagini…)
+@app.route("/<path:path>")
+def serve_static(path):
+    return send_from_directory(".", path)
 
 url = "https://jynyslmoqfbcjugskbwe.supabase.co"
 key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5bnlzbG1vcWZiY2p1Z3NrYndlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyOTcxNDEsImV4cCI6MjA4OTg3MzE0MX0.3WHn4vCyHFfgnskTZAWfF6IYqysSJxDjcOcVhHQETm8"
