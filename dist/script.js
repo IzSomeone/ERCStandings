@@ -8,23 +8,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function get_standings() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch("https://ercstandings.onrender.com/standings");
-        const data = yield res.json();
+async function get_standings() {
+    try {
+        const res = await fetch("https://ercstandings.onrender.com/standings");
+        const data = await res.json();
+
         const table = document.getElementById("standings-body");
         table.innerHTML = "";
-        data.forEach((row) => {
-            table.innerHTML += `
-            <tr>
-                <td>${row.Position}</td>
-                <td>${row.Name}</td>
-                <td>${row.Team}</td>
-                <td>${row.Points}</td>
-            </tr>
-        `;
-        });
-    });
 
+        data.forEach(row => {
+            table.innerHTML += `
+                <tr>
+                    <td>${row.Position}</td>
+                    <td>${row.Name}</td>
+                    <td>${row.Team}</td>
+                    <td>${row.Points}</td>
+                </tr>
+            `;
+        });
+    } catch (error) {
+        console.error("Error: impossible to load standings", error);
+    }
 }
 get_standings();
