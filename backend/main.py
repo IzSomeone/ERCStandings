@@ -7,24 +7,19 @@ app = Flask(__name__)
 
 CORS(app, supports_credentials=True)
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
-@app.route("/")
+@app.get("/index")
 def serve_index():
-    return send_from_directory(ROOT_DIR, "index.html")
+    return send_file(os.path.join(PROJECT_ROOT, "index.html"))
 
-@app.route("/stile.css")
+@app.get("/")
+def serve_index_2():
+    return send_file(os.path.join(PROJECT_ROOT, "index.html"))
+
+@app.get("/stile.css")
 def serve_css():
-    return send_from_directory(ROOT_DIR, "stile.css")
-
-@app.route("/dist/<path:filename>")
-def serve_dist(filename):
-    return send_from_directory(os.path.join(ROOT_DIR, "dist"), filename)
-
-@app.route("/favicon.ico")
-def favicon():
-    return send_from_directory(ROOT_DIR, "logo.png")
+    return send_file(os.path.join(PROJECT_ROOT, "stile.css"))
 
 
 url = "https://jynyslmoqfbcjugskbwe.supabase.co"
@@ -42,7 +37,17 @@ def get_standings():
     )
     return jsonify(response.data)
 
+@app.get("/constructorstandings")
+def get_standings2():
+    response = (
+        supabase
+        .table("wcc")
+        .select("*")
+        .order("Position", desc=False)
+        .execute()
+    )
+    return jsonify(response.data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
-
