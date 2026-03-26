@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 function get_standings2() {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch("http://127.0.0.1:5000/standings");
+        const res = yield fetch("http://127.0.0.1:5000/constructorstandings");
         const data = yield res.json();
         const table = document.getElementById("standings-body");
         table.innerHTML = "";
