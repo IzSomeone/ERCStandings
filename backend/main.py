@@ -13,6 +13,10 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 def serve_index():
     return send_file(os.path.join(PROJECT_ROOT, "index.html"))
 
+@app.get("/wccstandings")
+def serve_wcc():
+    return send_file(os.path.join(PROJECT_ROOT, "constructor.html"))
+
 @app.get("/")
 def serve_index_2():
     return send_file(os.path.join(PROJECT_ROOT, "index.html"))
