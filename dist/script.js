@@ -13,7 +13,7 @@ async function get_standings() {
         const res = await fetch("https://ercstandings.onrender.com/standings");
         const data = await res.json();
 
-        const table = document.getElementById("standings");
+        const table = document.getElementById("standings-body");
         table.innerHTML = "";
 
         data.forEach(row => {
