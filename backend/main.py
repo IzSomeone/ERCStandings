@@ -29,6 +29,10 @@ def serve_css():
 def serve_dist(filename):
     return send_from_directory(os.path.join(PROJECT_ROOT, "dist"), filename)
 
+@app.get("/dist/script.js")
+def serve_script():
+    return send_from_directory(os.path.join(PROJECT_ROOT, "dist"), "script.js")
+
 url = "https://jynyslmoqfbcjugskbwe.supabase.co"
 key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5bnlzbG1vcWZiY2p1Z3NrYndlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyOTcxNDEsImV4cCI6MjA4OTg3MzE0MX0.3WHn4vCyHFfgnskTZAWfF6IYqysSJxDjcOcVhHQETm8"
 supabase = create_client(url, key)
