@@ -94,6 +94,8 @@ table.standings tr:hover {
 table.standings td:first-child {
     font-weight: 700;
     color: #ffcc00;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 /* LAST UPDATE */
@@ -117,10 +119,4 @@ table.standings td:first-child {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-/* Effetto fade-in tabella */
-table.standings {
-    opacity: 0;
-    transition: opacity 0.4s ease;
 }
