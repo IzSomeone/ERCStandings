@@ -120,3 +120,22 @@ table.standings td:first-child {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+button {
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ffcc00, #ff3b3b);
+    color: #0d0d0d;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.85;
+}
