@@ -53,12 +53,6 @@ h3::before {
     animation: pulse 1.2s infinite;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.4); opacity: 0.4; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
 /* TABLE WRAPPER */
 table.standings {
     width: 90%;
